@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Decky Plugins for Windows</title>
+<meta name="description" content="Windows-only Decky Loader plugins by Musika: {{PLUGIN_NAMES}}.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #070b14; --bg2: #0b1324; --bg3: #0d1a33;
+    --line: rgba(148, 197, 255, 0.16); --line-strong: rgba(148, 197, 255, 0.28);
+    --text: #e6eefa; --muted: #93a8c4; --soft: #b6c6dc;
+    --accent: #7dd3fc; --accent2: #38bdf8; --indigo: #6366f1;
+    --radius: 22px;
+    --font: 'Segoe UI Variable Text', 'Segoe UI', Inter, system-ui, -apple-system, sans-serif;
+    --display: 'Segoe UI Variable Display', 'Segoe UI', Inter, system-ui, -apple-system, sans-serif;
+    --mono: 'Cascadia Mono', ui-monospace, Consolas, monospace;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); }
+  body {
+    margin: 0; color: var(--text); font-family: var(--font); line-height: 1.55; -webkit-font-smoothing: antialiased;
+    background:
+      radial-gradient(1100px 520px at 85% -8%, rgba(56, 189, 248, 0.20), transparent 60%),
+      radial-gradient(900px 520px at 0% 30%, rgba(99, 102, 241, 0.14), transparent 62%),
+      linear-gradient(180deg, var(--bg) 0%, var(--bg2) 55%, var(--bg3) 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+  .grid-bg {
+    position: fixed; inset: 0; pointer-events: none;
+    background-image:
+      linear-gradient(rgba(148, 197, 255, 0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148, 197, 255, 0.045) 1px, transparent 1px);
+    background-size: 44px 44px;
+    -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 0%, transparent 70%);
+            mask-image: radial-gradient(ellipse at 50% 0%, #000 0%, transparent 70%);
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { color: #fff; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+  .wrap { position: relative; max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+  header.hero { padding: 88px 0 56px; }
+  .eyebrow { font-size: 13px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--accent); font-weight: 600; }
+  h1 {
+    font-family: var(--display); font-weight: 650; letter-spacing: -0.035em; line-height: 1.02;
+    font-size: clamp(42px, 7vw, 76px); margin: 16px 0 18px;
+    background: linear-gradient(180deg, #fff 0%, #dbeafe 70%, #a5c8f5 100%);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .lede { font-size: clamp(17px, 2.2vw, 20px); color: var(--soft); max-width: 640px; margin: 0; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 12px 18px; border-radius: 12px; font-weight: 600;
+    font-size: 15px; border: 0; cursor: pointer; font-family: inherit;
+  }
+  .btn-primary { color: #06101f; background: linear-gradient(135deg, #bae6fd, #60a5fa); }
+  .btn-primary:hover { color: #06101f; filter: brightness(1.06); }
+  .btn-ghost { color: var(--text); background: rgba(148, 197, 255, 0.08); box-shadow: inset 0 0 0 1px var(--line-strong); }
+  .btn-ghost:hover { color: #fff; background: rgba(148, 197, 255, 0.14); }
+
+  section { padding: 24px 0 40px; }
+  h2 { font-family: var(--display); font-size: 28px; letter-spacing: -0.02em; margin: 0 0 6px; font-weight: 650; }
+  .section-sub { color: var(--muted); margin: 0 0 26px; }
+
+  .cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+  .card {
+    display: flex; flex-direction: column; border-radius: var(--radius); overflow: hidden;
+    background: linear-gradient(180deg, rgba(148, 197, 255, 0.07), rgba(148, 197, 255, 0.025));
+    box-shadow: inset 0 0 0 1px var(--line);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+  }
+  .card:hover { transform: translateY(-2px); box-shadow: inset 0 0 0 1px var(--line-strong), 0 18px 50px rgba(0, 0, 0, 0.35); }
+  .card img { display: block; width: 100%; height: auto; aspect-ratio: 920 / 430; object-fit: cover; }
+  .card-body { padding: 22px 24px 24px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+  .card h3 { margin: 0; font-family: var(--display); font-size: 24px; letter-spacing: -0.015em; font-weight: 650; }
+  .ver { font-size: 13px; font-weight: 600; color: var(--accent); white-space: nowrap; }
+  .desc { margin: 0; color: var(--soft); font-size: 15px; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag { font-size: 12px; color: #c9d8ec; padding: 3px 9px; border-radius: 999px; background: rgba(148, 197, 255, 0.07);
+    box-shadow: inset 0 0 0 1px var(--line); }
+  .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 6px; }
+  .links .btn { padding: 9px 14px; font-size: 14px; }
+
+  .steps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
+  .step { border-radius: var(--radius); padding: 24px; box-shadow: inset 0 0 0 1px var(--line);
+    background: linear-gradient(180deg, rgba(148, 197, 255, 0.06), rgba(148, 197, 255, 0.02)); }
+  .step h3 { margin: 0 0 8px; font-size: 19px; font-weight: 650; }
+  .step p { margin: 0 0 12px; color: var(--soft); font-size: 15px; }
+  .copy { display: flex; gap: 8px; align-items: stretch; }
+  .copy code {
+    flex: 1; min-width: 0; overflow-x: auto; white-space: nowrap; font-family: var(--mono); font-size: 13.5px;
+    color: #bae6fd; padding: 10px 12px; border-radius: 10px; background: rgba(0, 0, 0, 0.35); box-shadow: inset 0 0 0 1px var(--line);
+  }
+  .copy .btn { padding: 8px 14px; font-size: 13.5px; }
+  .note { font-size: 13.5px; color: var(--muted); margin: 10px 0 0; }
+
+  .caution {
+    margin-top: 22px; border-radius: 16px; padding: 16px 18px; font-size: 14.5px; color: #fde2e2;
+    background: rgba(248, 113, 113, 0.08); box-shadow: inset 0 0 0 1px rgba(248, 113, 113, 0.28);
+  }
+  .caution b { color: #fecaca; }
+
+  footer { padding: 40px 0 60px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 30px; }
+  footer .row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; }
+
+  @media (max-width: 760px) {
+    .wrap { padding: 0 16px; }
+    header.hero { padding: 56px 0 36px; }
+    .cards, .steps { grid-template-columns: 1fr; }
+    .card-body { padding: 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } }
+</style>
+</head>
+<body>
+<div class="grid-bg" aria-hidden="true"></div>
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">Decky Loader for Windows</div>
+    <h1>Plugins for your<br>Windows handheld</h1>
+    <p class="lede">Hand-made Decky plugins for Steam on Windows: performance, controls, upscaling and quick settings, right in the Quick Access menu.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#plugins">Browse plugins</a>
+      <a class="btn btn-ghost" href="#add">Add this store to Decky</a>
+    </div>
+  </header>
+
+  <section id="plugins" aria-labelledby="plugins-h">
+    <h2 id="plugins-h">Plugins</h2>
+    <p class="section-sub">{{PLUGIN_COUNT}} plugins. Each one is open source on GitHub.</p>
+    <div class="cards">
+{{CARDS}}
+    </div>
+    <div class="caution"><b>Online games:</b> don't use Clarity (OptiScaler) in online games. Anti-cheat can treat it as a cheat and ban your account.</div>
+  </section>
+
+  <section id="add" aria-labelledby="add-h">
+    <h2 id="add-h">Add this store to Decky</h2>
+    <p class="section-sub">Install the plugins from inside Steam, with updates.</p>
+    <div class="steps">
+      <div class="step">
+        <h3>Decky Loader for Windows</h3>
+        <p>This store is built in: open Decky, then the Store, and the plugins are listed next to the official ones.</p>
+        <p class="note">Public download of Decky Loader for Windows coming soon.</p>
+      </div>
+      <div class="step">
+        <h3>Any other Decky build</h3>
+        <p>In Decky's settings open <b>Store</b>, choose <b>Custom</b>, and enter:</p>
+        <div class="copy">
+          <code id="store-url">https://musika08.github.io/decky-windows-store/plugins</code>
+          <button class="btn btn-ghost" type="button" id="copy-btn" aria-label="Copy the store address">Copy</button>
+        </div>
+        <p class="note">That address is for Decky to read; in a browser it only shows the raw plugin list.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="row">
+      <div>Made by Musika. Unofficial; not affiliated with Valve or the Decky Loader team.</div>
+      <a class="btn btn-ghost" href="https://ko-fi.com/musika">Support on Ko-fi</a>
+    </div>
+  </footer>
+</div>
+<script>
+  (function () {
+    var btn = document.getElementById('copy-btn');
+    var url = document.getElementById('store-url').textContent;
+    btn.addEventListener('click', function () {
+      var done = function () { btn.textContent = 'Copied'; setTimeout(function () { btn.textContent = 'Copy'; }, 1600); };
+      try {
+        navigator.clipboard.writeText(url).then(done, function () {});
+      } catch (e) { /* no clipboard: the address stays selectable */ }
+    });
+  })();
+</script>
+</body>
+</html>
