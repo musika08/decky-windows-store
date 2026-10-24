@@ -3,10 +3,15 @@
   "id": 900001,
   "name": "Overdrive",
   "author": "Musika",
-  "description": "ROG Ally controls on Windows: performance modes with their own watts, Auto TDP, FPS limit, CPU and GPU fan curves, CPU Boost, Windows power mode and Auto SR. Controller, vibration and touch settings are in Traction. Unofficial; based on G-Helper. Needs Decky Loader for Windows.",
+  "description": "ROG Ally controls on Windows: performance modes with their own watts, Auto TDP, FPS limit, CPU and GPU fan curves, CPU Boost, Windows power mode and Auto SR. Controller, vibration and touch settings are in Traction. Unofficial; based on G-Helper. Needs Decky Loader for Windows. Support: ko-fi.com/musika",
   "tags": ["windows", "asus", "rog-ally", "performance", "tdp", "fans"],
   "image": "overdrive.png",
   "versions": [
+   {
+    "version": "0.2.1",
+    "sha256": "eb53f2e7707d3d3cf8b9afd2f48f8ad66f5fde5c7f7cbaf16d76ae17f9361188",
+    "url": "https://github.com/musika08/overdrive/releases/download/v0.2.1/overdrive-0.2.1.zip"
+   },
    {
     "version": "0.2.0",
     "sha256": "535009c51b37ee5c3e7e4a2f600c5cff87086f5c9d98e165c77e85e3f15ed8d1",
