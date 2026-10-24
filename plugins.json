@@ -3,10 +3,15 @@
   "id": 900001,
   "name": "Overdrive",
   "author": "Musika",
-  "description": "ROG Ally controls on Windows: performance modes with their own watts, Auto TDP, FPS limit, CPU and GPU fan curves, CPU Boost, Windows power mode, controller mode, grip vibration, touchscreen and Auto SR. Unofficial; based on G-Helper. Needs Decky Loader for Windows.",
+  "description": "ROG Ally controls on Windows: performance modes with their own watts, Auto TDP, FPS limit, CPU and GPU fan curves, CPU Boost, Windows power mode and Auto SR. Controller, vibration and touch settings are in Traction. Unofficial; based on G-Helper. Needs Decky Loader for Windows.",
   "tags": ["windows", "asus", "rog-ally", "performance", "tdp", "fans"],
   "image": "overdrive.png",
   "versions": [
+   {
+    "version": "0.2.0",
+    "sha256": "535009c51b37ee5c3e7e4a2f600c5cff87086f5c9d98e165c77e85e3f15ed8d1",
+    "url": "https://github.com/musika08/overdrive/releases/download/v0.2.0/overdrive-0.2.0.zip"
+   },
    {
     "version": "0.1.0",
     "sha256": "1ffa3a3aa3760b7cc214e8c697216d8d5fcae84a27c242908c271e5fc0e7582a",
@@ -41,6 +46,21 @@
     "version": "0.1.0",
     "sha256": "7bbd2ba31f97e8a481e03e39f330dbc356a64106c6856bca1ddf8e8b4eb38c22",
     "url": "https://github.com/musika08/clarity/releases/download/v0.1.0/clarity-0.1.0.zip"
+   }
+  ]
+ },
+ {
+  "id": 900004,
+  "name": "Traction",
+  "author": "Musika",
+  "description": "ROG Ally controls on Windows: controller mode (Gamepad, Desktop or Auto), grip vibration, touchscreen on or off, and the Armoury Crate switch shared with Overdrive. Works with or without Overdrive (0.2.0 or newer). Unofficial; based on G-Helper. Needs Decky Loader for Windows.",
+  "tags": ["windows", "asus", "rog-ally", "controller"],
+  "image": "traction.png",
+  "versions": [
+   {
+    "version": "0.1.0",
+    "sha256": "5452c32db76b6c03a690790c2de79825a37e84c125cdd65efae7837253b089cf",
+    "url": "https://github.com/musika08/traction/releases/download/v0.1.0/traction-0.1.0.zip"
    }
   ]
  }
