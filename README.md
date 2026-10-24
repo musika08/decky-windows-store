@@ -5,6 +5,7 @@ A static plugin list in the format Decky Loader's store reads, served by GitHub 
 
 - [Overdrive](https://github.com/musika08/overdrive): ROG Ally controls (performance, Auto TDP, fans, controller).
 - [Control Center](https://github.com/musika08/decky-control-center): brightness, volume, Wi-Fi, Bluetooth, battery limit.
+- [Clarity](https://github.com/musika08/clarity): per-game OptiScaler with AMD FSR 4 Lite and frame generation.
 
 Each version points at the plugin's own GitHub release zip; Decky checks the zip's SHA-256 before installing.
 

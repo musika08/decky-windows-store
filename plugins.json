@@ -28,5 +28,20 @@
     "url": "https://github.com/musika08/decky-control-center/releases/download/v0.1.0/control-center-0.1.0.zip"
    }
   ]
+ },
+ {
+  "id": 900003,
+  "name": "Clarity",
+  "author": "Musika",
+  "description": "Per-game OptiScaler on Windows: install it into a game, pick the AMD FSR 4 model (Lite, Standard or Auto) and turn frame generation on or off, then remove it cleanly. Uses the FSR 4 files from your AMD driver. Warns about anti-cheat games; don't use it in online games. Packs a pre-release OptiScaler build. Unofficial. Needs Decky Loader for Windows.",
+  "tags": ["windows", "optiscaler", "fsr", "upscaling", "frame-generation"],
+  "image": "clarity.png",
+  "versions": [
+   {
+    "version": "0.1.0",
+    "sha256": "7bbd2ba31f97e8a481e03e39f330dbc356a64106c6856bca1ddf8e8b4eb38c22",
+    "url": "https://github.com/musika08/clarity/releases/download/v0.1.0/clarity-0.1.0.zip"
+   }
+  ]
  }
 ]
