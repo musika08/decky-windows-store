@@ -23,10 +23,15 @@
   "id": 900002,
   "name": "Control Center",
   "author": "Musika",
-  "description": "Brightness, volume, Wi-Fi, Bluetooth and the ASUS battery charge limit from the Quick Access menu on Windows. Needs Decky Loader for Windows.",
+  "description": "Brightness, volume, Wi-Fi, Bluetooth and the ASUS battery charge limit from the Quick Access menu on Windows. Needs Decky Loader for Windows. Support: ko-fi.com/musika",
   "tags": ["windows", "brightness", "volume", "wifi", "bluetooth", "battery"],
   "image": "control-center.png",
   "versions": [
+   {
+    "version": "0.1.1",
+    "sha256": "d0947bca9682c2fd60a43d7c7feee914f7072d7ea105bd5b626764ec563e1778",
+    "url": "https://github.com/musika08/decky-control-center/releases/download/v0.1.1/control-center-0.1.1.zip"
+   },
    {
     "version": "0.1.0",
     "sha256": "5cab4351347e5b6c349025ee74c6164ce52b8799cc4c3959a8d3d2292079b915",
